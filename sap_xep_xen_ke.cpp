@@ -13,10 +13,8 @@ int main(){
         }
         sort(a, a + n);
         for(int i = 0; i <= n/2; i++){
-            if( i < n/2 ){
-                if( n % 2 == 0) cout << a[i] << " " << a[n/2 + i] << " ";
-                else cout << a[i] << " " << a[n/2 + 1 + i] << " ";
-            }
+            if( i < n/2 )
+                cout << a[n-1 - i] << " " << a[i] << " ";
             if( n % 2 != 0 && i == n/2) cout << a[i];
         }
         cout << endl;

@@ -1,18 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// sắp xếp chọn - Selection Sort
+// sắp xếp nổi bọt - Bubble Sort
 
-void sapxepchon(int a[], int n)
+void sapxepnoibot(int a[], int n)
 {
-    int vtri;
+    int check;
     for (int i = 0; i < n - 1; i++)
     {
-        vtri = i;
-        for (int j = i + 1; j < n; j++)
-            if (a[j] < a[vtri])
-                vtri = j;
-        swap(a[vtri], a[i]);
+        check = 0;
+        for (int j = 0; j < n - i - 1; j++)
+            if (a[j] > a[j + 1])
+            {
+                swap(a[j], a[j + 1]);
+                check = 1;
+            }
+        if (check == 0)
+            break;
         cout << "Buoc " << i + 1 << ": ";
         for (int k = 0; k < n; k++)
             cout << a[k] << " ";
@@ -27,5 +31,5 @@ int main()
     int a[n];
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    sapxepchon(a, n);
+    sapxepnoibot(a, n);
 }
