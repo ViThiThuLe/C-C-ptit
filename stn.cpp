@@ -1,23 +1,23 @@
+
 #include <bits/stdc++.h>
 using namespace std;
-
-int ktra(long long n){
-    
-}
 
 int main(){
 	int t;
 	cin >> t;
+	cin.ignore();
 	while(t--){
-        long long n;
-		cin >> n;
-		long long a = n, m = 0;
-		while(a > 0){
-			m = m * 10 + a % 10;	
-			a /= 10;
+		string s;
+		getline(cin, s);
+		int n = s.length();
+		int k = 1;
+		for(int i = 0; i < n/2 ; i++){
+			if(s[i] != s[n - 1 -i]){
+				k = 0;
+				break;
+			}
 		}
-		if(m == n) cout << "YES";
-		else cout << "NO";
-        cout << endl;
-    }
+		if( k == 1) cout << "YES" << endl;
+		else cout << "NO" << endl;
+	}
 }
