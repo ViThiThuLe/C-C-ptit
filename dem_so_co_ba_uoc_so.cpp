@@ -13,10 +13,10 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int a, b, dem = 0;
-        cin >> a >> b;
-        for( int i = a; i <= b; i++){
-            if( nto(i)) dem++;
+        long long n, dem = 0;
+        cin >> n;
+        for(int i = 1; i <= sqrt(n); i++){
+            if(nto(i) && i*i <= n) dem++;
         }
         cout << dem << endl;
     }
